@@ -1,0 +1,126 @@
+1.Java program to calculate surname length and check age parity:
+
+import java.util.Scanner;
+
+public class SurnameAndAge {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your surname: ");
+        String surname = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.println("The number of characters in your surname is: " + surname.length());
+
+        if (age % 2 == 0) {
+            System.out.println("Your current age is an even number.");
+        } else {
+            System.out.println("Your current age is an odd number.");
+        }
+    }
+}
+
+2.Java program to compute the average of five marks:
+
+import java.util.Scanner;
+
+public class MarksAverage {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalMarks = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Enter marks for unit " + i + ": ");
+            int marks = scanner.nextInt();
+            totalMarks += marks;
+        }
+
+        double average = (double) totalMarks / 5;
+        System.out.printf("Average marks: %.2f\n", average);
+    }
+}
+
+
+3.Java program to check divisibility of a number:
+
+import java.util.Scanner;
+
+public class DivisibilityTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        for (int i = 0; i <= 9; i++) {
+            if (number % i == 0) {
+                System.out.println("The number is divisible by " + i);
+            }
+        }
+    }
+}
+
+
+4.Java program to display multiples of 2, 3, and 7:
+
+public class Multiples {
+    public static void main(String[] args) {
+        System.out.println("Multiples of 2, 3, and 7 within the range 71 to 150:");
+
+        for (int i = 71; i <= 150; i++) {
+            if (i % 2 == 0 && i % 3 == 0 && i % 7 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+
+5.Java calculator program:
+
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter an operation (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        System.out.print("Enter another number: ");
+        double num2 = scanner.nextDouble();
+
+        double result;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Cannot divide by zero.");
+                }
+                break;
+            default:
+                System.out.println("Invalid operation.");
+        }
+    }
+}
