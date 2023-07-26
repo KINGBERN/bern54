@@ -1,0 +1,145 @@
+1.      import java.util.Scanner;
+
+public class SurnameAge {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your surname: ");
+        String surname = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        int numCharacters = surname.length();
+        String evenOrOdd = age % 2 == 0 ? "even" : "odd";
+
+        System.out.println("The number of characters in your surname is " + numCharacters);
+        System.out.println("Your current age is " + evenOrOdd + " number");
+    }
+}
+
+
+
+
+
+
+2.    import java.util.Scanner;
+
+public class MarksCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the marks of the five units you did last semester: ");
+        int[] marks = new int[5];
+        for (int i = 0; i < marks.length; i++) {
+            marks[i] = scanner.nextInt();
+        }
+
+        int totalMarks = 0;
+        for (int mark : marks) {
+            totalMarks += mark;
+        }
+
+        double average = totalMarks / marks.length;
+
+        System.out.println("The average of your marks is " + average);
+    }
+}
+
+
+
+
+3.     import java.util.Scanner;
+
+public class DivisiblyTest {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        for (int i = 0; i < 10; i++) {
+            boolean isDivisible = number % i == 0;
+            String reason = isDivisible ? "because it ends with a " + i : "";
+
+            System.out.println("The number is divisible by " + i + " " + reason);
+        }
+    }
+}
+
+
+
+
+
+
+4.     import java.util.Scanner;
+
+public class MultiplesOf237 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the starting number: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the ending number: ");
+        int end = scanner.nextInt();
+
+        for (int i = start; i <= end; i++) {
+            if (i % 2 == 0 && i % 3 == 0 && i % 7 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+
+
+
+
+5.        import java.util.Scanner;
+
+public class CalculatorProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter an operation (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        double result = 0;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Error: Cannot divide by zero.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Error: Invalid operator.");
+                return;
+        }
+
+        System.out.println("Result: " + result);
+    }
+}
